@@ -1,0 +1,14 @@
+#include<stdio.h>
+
+ float getArea (float len, float wid)
+{
+  float getArea = len * wid;
+  return getArea;
+}   
+ 
+  int main()
+{
+  float result = getArea(5.3f,4.1f);
+  printf("Area is%f",result); 
+  return 0;
+}
