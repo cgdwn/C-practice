@@ -5,20 +5,19 @@ int main()
 {
     char a[10];
     char b[] = "abc";
+    char long_str[] = "This_is_a_very_long_string";
 
-    // --- 第一部分：用 strcpy ---
+    // --- 1. 原有的 strcpy (简单粗暴) ---
     strcpy(a, b);
-    printf("strcpy 结果: %s\n", a);
+    printf("1. strcpy 结果: %s\n", a);
 
-    // --- 第二部分：用 strncpy (对比) ---
-    // 先把 a 清空
-    memset(a, 0, sizeof(a)); 
+    // --- 2. 新增的 strncpy (安全可靠) ---
+    memset(a, 0, sizeof(a)); // 先清空内存，防止脏数据乱码
 
-    // 使用 strncpy，安全地拷贝
-    strncpy(a, "hello_world", sizeof(a) - 1);
-    a[sizeof(a) - 1] = '\0'; // 强制补一个结束符
+    strncpy(a, long_str, sizeof(a) - 1); // 留出 1 个字节
+    a[sizeof(a) - 1] = '\0'; // 强制加上结束符 \0
 
-    printf("strncpy 结果: %s\n", a);
+    printf("2. strncpy 结果: %s\n", a);
 
     return 0;
 }
