@@ -1,0 +1,26 @@
+#include<stdio.h>
+
+ int sum (int base,int additional)
+  {
+   int sum = base+additional;
+    return sum;
+  }
+
+  int main()
+{
+   int huihui = sum(88,10);
+   int dandan = sum(99,2);
+   if(huihui>dandan)
+   {
+    printf("high");
+   }
+   else if(huihui==dandan)
+   {
+   printf("same");
+   }
+   else
+   {
+   printf("low");
+   }
+   return 0;
+}
