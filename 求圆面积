@@ -1,0 +1,14 @@
+#include<stdio.h>
+
+   float getArea (float R)
+{
+  float getArea = R*R*3.14;
+  return getArea;
+}
+
+  int main()
+{
+  float result = getArea(5.2);
+  printf("round Area is%f",result);
+  return 0;
+}
